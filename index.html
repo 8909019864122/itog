@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My VR Gallery</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+        body { margin: 0; }
+        a-scene { height: 100vh; }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <!-- Добавляем освещение -->
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="directional" position="-1 1 1" intensity="0.5"></a-light>
+
+        <!-- Камера -->
+        <a-camera position="0 1.6 3"></a-camera>
+
+        <!-- Галерея -->
+        <a-entity id="gallery" position="0 1 -5">
+            <a-plane src="image1.jpg" position="-1.5 0 0" width="1.5" height="1" rotation="0 0 0"></a-plane>
+            <a-plane src="image2.jpg" position="0 0 0" width="1.5" height="1" rotation="0 0 0"></a-plane>
+            <a-plane src="image3.jpg" position="1.5 0 0" width="1.5" height="1" rotation="0 0 0"></a-plane>
+        </a-entity>
+
+        <!-- Добавляем пол с изображением травы -->
+        <a-plane src="grass.jpg" position="0 0 -4" rotation="-90 0 0" width="10" height="10"></a-plane>
+
+        <!-- Добавляем фон с изображением неба -->
+        <a-sky src="sky.jpg"></a-sky>
+
+        <!-- Добавляем 3D сферы на фоне -->
+        <a-sphere position="-2 1 -5" radius="1" color="#EF2D5E"></a-sphere>
+        <a-sphere position="2 1 -5" radius="1" color="#4CC3D2"></a-sphere>
+        <a-sphere position="0 1 -5" radius="1" color="#FFC65D"></a-sphere>
+    </a-scene>
+</body>
+</html>
